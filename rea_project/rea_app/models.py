@@ -11,7 +11,8 @@ class Season(models.Model):
 class Production(models.Model):
     season = models.ForeignKey(Season, on_delete=models.CASCADE, related_name="productions")
     title = models.CharField(max_length=120)
-    director = models.CharField(max_length=120)
+    photo_url = models.TextField(default=True)
+    director = models.CharField(max_length=120, default=True)
     choreographer = models.CharField(max_length=120, blank=True)
     musical_director = models.CharField(max_length=120, blank=True)
     start_date = models.DateField()
