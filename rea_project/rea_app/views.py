@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import Season
+from .serializers import SeasonSerializer
 
-# Create your views here.
-def helloIndex(req):
-    return HttpResponse("Welcome to REA")
+class SeasonView(viewsets.ModelViewSet):
+    queryset = Season.objects.all()
+    serializer_class = SeasonSerializer
