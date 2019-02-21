@@ -4,7 +4,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('season', views.SeasonView)
+router.register('production', views.ProductionView)
 
 urlpatterns = [
-    path('api/v1/', include(router.urls))
+    path('', include(router.urls))
 ]
