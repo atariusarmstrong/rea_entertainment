@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Season, Production
+from .models import Season, Production, EducationProgram
 
 
 class ProductionSerializer(serializers.ModelSerializer):
@@ -12,3 +12,9 @@ class SeasonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Season
         fields = ('id', 'name', 'year', 'productions')
+
+class EducationProgramSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EducationProgram
+        fields = ('id', 'title', 'instructor', 'location', 'date', 'time', 'price', 'description')
+
