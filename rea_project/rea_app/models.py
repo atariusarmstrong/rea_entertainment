@@ -12,3 +12,13 @@ class Season(models.Model):
     
     def __str__(self):
         return self.name
+
+class Production(models.Model):
+    title: models.CharField(max_length=120)
+    start_date: models.DateField()
+    end_date: models.DateField()
+    description: models.TextField()
+    season = models.ForeignKey(Season, on_delete=models.CASCADE, related_name="productions")
+
+    def __str__(self):
+        return self.title
