@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Header = styled.li`
-    display: inline;
+const Header = styled.ul`
+    list-style-type: none;
+    float: right;
+    li {
+        display: inline;
+        margin: 10px;
+        text-transform: uppercase;
+        color: black;
+    }
 `
 const NavBar = styled.div`
     background-color: #A22929;
+    width: 100vw;
+    height: 200px;
+    -webkit-clip-path: polygon(100% 34%, 100% 0%, 0% 0%, 0% 42%, 100% 23%);
+    clip-path: polygon(100% 34%, 100% 0%, 0% 0%, 0% 42%, 100% 23%);
 `
 
 class Navbar extends Component {
@@ -13,10 +24,10 @@ class Navbar extends Component {
         return (
             <NavBar>
                 <Header>
-                    <ul>Productions</ul>
-                    <ul>Education</ul>
-                    <ul>About Us</ul>
-                    <ul>Tickets</ul>
+                    <li>Productions</li>
+                    <li>Education</li>
+                    <li>About Us</li>
+                    <li>Tickets</li>
                 </Header>
             </NavBar>
         );
