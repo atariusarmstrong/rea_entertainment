@@ -10,7 +10,11 @@ class Index extends Component {
                 {this.props.productionList.map((production, i) => {
                     return (
                         <div key={i}>
-                            <h3>{production.title}</h3>
+                            <div><img src={production.photoUrl} alt={production.title}/></div>
+                            <div>
+                                <h3>{production.title}</h3>
+                                <p>{production.description}</p>
+                            </div>
                         </div>
                     )
                 })}
