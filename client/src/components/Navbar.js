@@ -17,6 +17,7 @@ const NavBar = styled.div`
     height: 200px;
     -webkit-clip-path: polygon(100% 34%, 100% 0%, 0% 0%, 0% 42%, 100% 23%);
     clip-path: polygon(100% 34%, 100% 0%, 0% 0%, 0% 42%, 100% 23%);
+    animation: expand 2s forwards;
 `
 
 class Navbar extends Component {
