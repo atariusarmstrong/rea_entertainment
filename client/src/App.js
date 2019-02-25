@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
+import GoogleLogout from 'react-google-login';
 import './App.css';
 import Navbar from './components/Navbar';
 import Index from './components/Index';
+import {Redirect} from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -12,14 +14,27 @@ class App extends Component {
       startDate: "5/1/2020",
       endDate: "5/17/2020",
       description: "A very wild experience"
-    }]
+    }],
+    redirect: false
+  }
+
+  // renderRedirect = () => {
+  //   if(this.state.redirect) {
+  //     return <Redirect to='/myaccount'/>
+  //   }
+  // }
+
+  responseGoogle = () => {
+    // this.setState({redirect: true})
+    console.log('user logged in')
+  }
+
+  logout = () => {
+    console.log('user logged out')
   }
 
   render() {
-
-    const responseGoogle = (response) => {
-      console.log("user successfully logged in");
-    }
+  
 
     return (
       
@@ -27,13 +42,17 @@ class App extends Component {
         <Navbar/>
         <Index productionList={this.state.productionList}/>
 
+        {/* {this.renderRedirect()} */}
         <GoogleLogin
           clientId="869869357020-4uu2fggcu62cva0o20vvl5q2701tmlej.apps.googleusercontent.com"
           buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-        />,
-        document.getElementById('googleButton')
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
+        />
+        <GoogleLogout
+          buttonText="Logout"
+          onLogoutSuccess={this.logout} 
+        />
       </div>
     );
   }
