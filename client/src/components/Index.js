@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Navbar from './Navbar';
+import GoogleLogin from 'react-google-login';
+import GoogleLogout from 'react-google-login';
 
 const ShowBox = styled.div`
     height: 395px;
@@ -31,6 +34,7 @@ class Index extends Component {
     render() {
         return (
             <div>
+                <Navbar />
                 Welcome to REA Ent
 
                 <h2>Season</h2>
@@ -47,6 +51,18 @@ class Index extends Component {
                         </ShowBox>
                     )
                 })}
+
+
+            <GoogleLogin
+                clientId="869869357020-4uu2fggcu62cva0o20vvl5q2701tmlej.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={this.responseGoogle}
+                onFailure={this.responseGoogle}
+            />
+            <GoogleLogout
+                buttonText="Logout"
+                onLogoutSuccess={this.logout} 
+            />
 
 
             </div>

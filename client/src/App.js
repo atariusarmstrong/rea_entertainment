@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import GoogleLogin from 'react-google-login';
-import GoogleLogout from 'react-google-login';
 import './App.css';
-import Navbar from './components/Navbar';
 import Index from './components/Index';
-import {Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ProductionIndex from './components/Productions/ProductionIndex';
 
 class App extends Component {
   state = {
@@ -17,12 +15,6 @@ class App extends Component {
     }],
     redirect: false
   }
-
-  // renderRedirect = () => {
-  //   if(this.state.redirect) {
-  //     return <Redirect to='/myaccount'/>
-  //   }
-  // }
 
   responseGoogle = () => {
     // this.setState({redirect: true})
@@ -39,20 +31,14 @@ class App extends Component {
     return (
       
       <div>
-        <Navbar/>
-        <Index productionList={this.state.productionList}/>
-
-        {/* {this.renderRedirect()} */}
-        <GoogleLogin
-          clientId="869869357020-4uu2fggcu62cva0o20vvl5q2701tmlej.apps.googleusercontent.com"
-          buttonText="Login"
-          onSuccess={this.responseGoogle}
-          onFailure={this.responseGoogle}
-        />
-        <GoogleLogout
-          buttonText="Logout"
-          onLogoutSuccess={this.logout} 
-        />
+        <Router>
+          <Switch>
+            <Route exact path='/' 
+              render={(props) => <Index {...props} productionList={this.state.productionList}/>}
+            />
+            <Route exact path="/season" component={ProductionIndex}/>
+          </Switch>
+        </Router>
       </div>
     );
   }

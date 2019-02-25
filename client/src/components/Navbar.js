@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 const Header = styled.ul`
     list-style-type: none;
@@ -25,7 +26,7 @@ class Navbar extends Component {
         return (
             <NavBar>
                 <Header>
-                    <li>Productions</li>
+                    <Link to="/season"><li>Productions</li></Link>
                     <li>Education</li>
                     <li>About Us</li>
                     <li>Tickets</li>
