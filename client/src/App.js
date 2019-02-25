@@ -18,7 +18,7 @@ class App extends Component {
   render() {
 
     const responseGoogle = (response) => {
-      console.log(response);
+      console.log("user successfully logged in");
     }
 
     return (
@@ -28,7 +28,7 @@ class App extends Component {
         <Index productionList={this.state.productionList}/>
 
         <GoogleLogin
-          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+          clientId="869869357020-4uu2fggcu62cva0o20vvl5q2701tmlej.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
