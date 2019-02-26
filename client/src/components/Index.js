@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from './Navbar';
 import GoogleLogin from 'react-google-login';
 import GoogleLogout from 'react-google-login';
+import { Link } from 'react-router-dom'
 
 const ShowBox = styled.div`
     height: 395px;
@@ -35,6 +36,8 @@ const ShowContainer = styled.div`
 `
 
 class Index extends Component {
+
+
     render() {
         return (
             <div>
@@ -42,18 +45,21 @@ class Index extends Component {
                 Welcome to REA Ent
 
                 <h2>Season</h2>
+
                 <ShowContainer>
                     {this.props.productionList.map((production, i) => {
                         return (
                             <ShowBox key={i}>
-                                <ShowHead>
-                                    <img src={production.photo_url} alt={production.title}/>
-                                    <h3>{production.title}</h3>
-                                </ShowHead>
-                                <div>
-                                    <p>{production.start_date} - {production.end_date}</p>
-                                    <p>Directed by: {production.director}</p>
-                                </div>
+                                <Link to={`/season/${production._id}`}>
+                                    <ShowHead>
+                                        <img src={production.photo_url} alt={production.title}/>
+                                        <h3>{production.title}</h3>
+                                    </ShowHead>
+                                    <div>
+                                        <p>{production.start_date} - {production.end_date}</p>
+                                        <p>Directed by: {production.director}</p>
+                                    </div>
+                                </Link>
                             </ShowBox>
                         )
                     })}
