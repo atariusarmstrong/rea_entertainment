@@ -27,12 +27,22 @@ class App extends Component {
       endDate: "",
       description: ""
     }],
+    educationalprograms:[{
+      title: "",
+      instructor: "",
+      location: "",
+      date: "",
+      time: "",
+      price: "",
+      description: ""
+    }],
     redirect: false
   }
 
   componentDidMount() {
     this.getAllProductions()
     this.getAllSeasons()
+    this.getAllEducationalPrograms()
   }
 
   getAllProductions = () => {
@@ -48,6 +58,10 @@ class App extends Component {
     console.log('user logged in')
   }
 
+  getAllEducationalPrograms = () => {
+    Axios.get('http://localhost:8000/api/v1/educationprograms')
+    .then((res) => {this.setState({educationalprograms: res.data})})
+  }
   logout = () => {
     console.log('user logged out')
   }
@@ -72,7 +86,10 @@ class App extends Component {
             <Route exact path='/season/:productionId' 
               component={ProductionShow}
             />
-            <Route exact pathe='/educationalprograms' component={EducationProgramIndex}/>
+            <Route exact pathe='/educationalprograms' 
+              render={(props) => <EducationProgramIndex {...props}
+              educationalprograms={this.state.educationalprograms}/>}
+            />
           </Switch>
         </Router>
       </div>
