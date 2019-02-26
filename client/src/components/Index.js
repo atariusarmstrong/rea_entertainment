@@ -48,10 +48,10 @@ class Index extends Component {
                 <h2>Season</h2>
 
                 <ShowContainer>
-                    {this.props.productionList.map((production, i) => {
+                    {this.props.productionList.map((production) => {
                         return (
-                            <ShowBox key={i}>
-                                <Link to={`/season/${production._id}`}>
+                            <ShowBox key={production.id}>
+                                <Link to={`/season/${production.id}`}>
                                     <ShowHead>
                                         <img src={production.photo_url} alt={production.title}/>
                                         <h3>{production.title}</h3>

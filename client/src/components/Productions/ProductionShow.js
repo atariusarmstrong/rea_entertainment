@@ -3,24 +3,24 @@ import Axios from 'axios';
 
 class ProductionShow extends Component {
     state = {
-        production: {
-            title: "",
-            photoUrl: "",
-            startDate: "",
-            endDate: "",
-            description: ""
-        }
+        production: {}
+    }
+
+    componentDidMount = () => {
+        this.getSingleProduction()
     }
 
     getSingleProduction = () => {
         const productionId = this.props.match.params.productionId
         Axios.get(`http://localhost:8000/api/v1/productions/${productionId}`)
-        .then((res) => console.log(res.data))
+        .then((res) => this.setState({production: res.data}))
     }
     render() {
         return (
             <div>
-                Here is a single production
+                <h1>{this.state.production.title}</h1>
+                <h4>{this.state.production.start_date} - {this.state.production.end_date}</h4>
+                <p>{this.state.production.description}</p>
             </div>
         );
     }

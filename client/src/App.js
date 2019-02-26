@@ -69,7 +69,7 @@ class App extends Component {
               productionList={this.state.productionList}/>}
             />
             <Route exact path='/season/:productionId' 
-              compeonent={ProductionShow}
+              component={ProductionShow}
             />
           </Switch>
         </Router>
