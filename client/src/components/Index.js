@@ -34,6 +34,9 @@ const ShowContainer = styled.div`
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     margin: 0 auto;
+    a {
+        text-decoration: none;
+    }
 `
 
 class Index extends Component {

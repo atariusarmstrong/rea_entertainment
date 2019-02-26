@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom';
 const Header = styled.ul`
     list-style-type: none;
     float: right;
+    a {
+        text-decoration: none;
+    }
     li {
         display: inline;
         margin: 10px;
