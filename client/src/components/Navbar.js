@@ -30,7 +30,7 @@ class Navbar extends Component {
             <NavBar>
                 <Header>
                     <Link to="/season"><li>Productions</li></Link>
-                    <li>Education</li>
+                    <Link to="/educationalprograms"><li>Education</li></Link>
                     <li>About Us</li>
                     <li>Tickets</li>
                 </Header>
