@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const ShowBox = styled.div`
+    box-shadow: 5px 5px #A22929;
+    background-color: white;
+    color: #707070;
+`
 
 class ProductionIndex extends Component {
     state = {
@@ -22,7 +29,7 @@ class ProductionIndex extends Component {
                 <Navbar />
                 {this.state.productionList.map((production, i) => {
                     return (
-                        <div key={i}>
+                        <ShowBox key={i}>
                             <div>
                                 <img src={production.photoUrl} alt={production.title}/>
                                 <h3>{production.title}</h3>
@@ -30,7 +37,7 @@ class ProductionIndex extends Component {
                             <div>
                                 <p>{production.description}</p>
                             </div>
-                        </div>
+                        </ShowBox>
                     )
                 })}
             </div>
