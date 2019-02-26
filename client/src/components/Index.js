@@ -29,6 +29,10 @@ const ShowHead = styled.div`
         width: 295px;
     }
 `
+const ShowContainer = styled.div`
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+`
 
 class Index extends Component {
     render() {
@@ -38,19 +42,23 @@ class Index extends Component {
                 Welcome to REA Ent
 
                 <h2>Season</h2>
-                {this.props.productionList.map((production, i) => {
-                    return (
-                        <ShowBox key={i}>
-                            <ShowHead>
-                                <img src={production.photoUrl} alt={production.title}/>
-                                <h3>{production.title}</h3>
-                            </ShowHead>
-                            <div>
-                                <p>{production.description}</p>
-                            </div>
-                        </ShowBox>
-                    )
-                })}
+                <ShowContainer>
+                    {this.props.productionList.map((production, i) => {
+                        return (
+                            <ShowBox key={i}>
+                                <ShowHead>
+                                    <img src={production.photo_url} alt={production.title}/>
+                                    <h3>{production.title}</h3>
+                                </ShowHead>
+                                <div>
+                                    <p>{production.start_date} - {production.end_date}</p>
+                                    <p>Directed by: {production.director}</p>
+                                </div>
+                            </ShowBox>
+                        )
+                    })}
+                </ShowContainer>
+                
 
 
             <GoogleLogin
