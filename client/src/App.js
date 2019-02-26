@@ -3,17 +3,33 @@ import './App.css';
 import Index from './components/Index';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductionIndex from './components/Productions/ProductionIndex';
+import Axios from 'axios';
 
 class App extends Component {
   state = {
+    season: [{
+      name: "",
+      productions: [{
+        title: "",
+        photoUrl: "",
+        startDate: "",
+        endDate: "",
+        description: ""
+      }]
+    }],
     productionList:[{
-      title: "Brand New Show",
-      photoUrl: "https://images.unsplash.com/photo-1528392944531-e63de93f8751?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-      startDate: "5/1/2020",
-      endDate: "5/17/2020",
-      description: "A very wild experience"
+      title: "",
+      photoUrl: "",
+      startDate: "",
+      endDate: "",
+      description: ""
     }],
     redirect: false
+  }
+
+  componentDidMount = () => {
+    Axios.get("http://localhost:8000/api/v1/productions")
+    .then((res) => this.setState({productionList: res.data}))
   }
 
   responseGoogle = () => {

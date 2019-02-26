@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Navbar from './Navbar';
 import GoogleLogin from 'react-google-login';
 import GoogleLogout from 'react-google-login';
-import Axios from 'axios';
 
 const ShowBox = styled.div`
     height: 395px;
@@ -32,10 +31,6 @@ const ShowHead = styled.div`
 `
 
 class Index extends Component {
-    componentDidMount = () => {
-        Axios.get('http://localhost:8000/api/v1/seasons')
-        .then((res) => console.log(res.data))
-    }
     render() {
         return (
             <div>
