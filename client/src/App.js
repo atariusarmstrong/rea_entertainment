@@ -36,7 +36,9 @@ class App extends Component {
             <Route exact path='/' 
               render={(props) => <Index {...props} productionList={this.state.productionList}/>}
             />
-            <Route exact path="/season" component={ProductionIndex}/>
+            <Route exact path="/season" 
+              render={(props) => <ProductionIndex {...props} productionList={this.state.productionList}/>}
+            />
           </Switch>
         </Router>
       </div>
