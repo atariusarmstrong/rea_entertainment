@@ -60,15 +60,17 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/' 
-              render={(props) => 
-              <Index {...props} 
+              render={(props) => <Index {...props} 
                 productionList={this.state.productionList}
                 />}
             />
             <Route exact path="/season" 
-              render={(props) => <ProductionIndex {...props} productionList={this.state.productionList}/>}
+              render={(props) => <ProductionIndex {...props} 
+              productionList={this.state.productionList}/>}
             />
-            <Route exact path='/season/:productionId' component={ProductionShow}/>
+            <Route exact path='/season/:productionId' 
+              compeonent={ProductionShow}
+            />
           </Switch>
         </Router>
       </div>

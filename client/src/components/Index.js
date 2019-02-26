@@ -12,7 +12,7 @@ const ShowBox = styled.div`
     background-color: white;
     color: #707070;
     position: relative;
-    margin-left: 67px;
+    margin: 0 5;
     p{
         padding: 0px 10px;
     }
@@ -33,6 +33,7 @@ const ShowHead = styled.div`
 const ShowContainer = styled.div`
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    margin: 0 auto;
 `
 
 class Index extends Component {
