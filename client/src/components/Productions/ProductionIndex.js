@@ -11,13 +11,7 @@ const ShowBox = styled.div`
 
 class ProductionIndex extends Component {
     state = {
-        productionList:[{
-            title: "",
-            photoUrl: "",
-            startDate: "",
-            endDate: "",
-            description: "",
-        }]
+        productionList:[{}]
     }
     componentDidMount = () => {
         axios.get("http://localhost:8000/api/v1/productions")
@@ -31,7 +25,7 @@ class ProductionIndex extends Component {
                     return (
                         <ShowBox key={i}>
                             <div>
-                                <img src={production.photoUrl} alt={production.title}/>
+                                <img src={production.photo_url} alt={production.title}/>
                                 <h3>{production.title}</h3>
                             </div>
                             <div>
