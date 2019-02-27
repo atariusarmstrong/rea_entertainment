@@ -19,7 +19,13 @@ class EducationShow extends Component {
         return (
             <div>
                 <Navbar />
+                <h1>Educational Programs</h1>
                 <h1>{this.state.educationprogram.title}</h1>
+                <h3>with {this.state.educationprogram.instructor}</h3>
+                <p>{this.state.educationprogram.description}</p>
+
+                <p>DATE & TIME</p>
+                <p>{this.state.educationprogram.date}, {this.state.educationprogram.time}</p>
             </div>
         );
     }

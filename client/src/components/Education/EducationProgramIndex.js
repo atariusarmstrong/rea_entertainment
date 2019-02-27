@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import Axios from 'axios';
 import Navbar from '../Navbar';
 import styled from 'styled-components'
@@ -42,9 +43,11 @@ class EducationProgramIndex extends Component {
                 {this.state.educationalprograms.map((program, i) => {
                     return (
                         <EducationBox key={i}>
-                            <h2>{program.title}</h2><h4>with {program.instructor}</h4>
-                            <p>{program.description}</p>
-                            <p>Price: ${program.price}</p>
+                            <Link to={`/educationalprograms/${program.id}`}>
+                                <h2>{program.title}</h2><h4>with {program.instructor}</h4>
+                                <p>{program.description}</p>
+                                <p>Price: ${program.price}</p>
+                            </Link>
                         </EducationBox>
                     )
                 })}
