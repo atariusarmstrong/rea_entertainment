@@ -10,6 +10,12 @@ const EducationBox = styled.div`
     height: 163px;
     width: 859px;
     margin: 0 auto;
+    a {
+        text-decoration: none;
+    }
+    h2 {
+        text-transform: uppercase;
+    }
 `
 
 const Header = styled.div`
