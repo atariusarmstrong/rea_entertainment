@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import Navbar from '../Navbar';
 import axios from 'axios'
 import styled from 'styled-components'
@@ -24,13 +25,16 @@ class ProductionIndex extends Component {
                 {this.state.productionList.map((production, i) => {
                     return (
                         <ShowBox key={i}>
-                            <div>
-                                <img src={production.photo_url} alt={production.title}/>
-                                <h3>{production.title}</h3>
-                            </div>
-                            <div>
-                                <p>{production.description}</p>
-                            </div>
+                            <Link to={`/season/${production.id}`}>
+                                <div>
+                                    <img src={production.photo_url} alt={production.title}/>
+                                    <h3>{production.title}</h3>
+                                </div>
+                                <div>
+                                    <p>{production.description}</p>
+                                </div>
+                            </Link>
+                            
                         </ShowBox>
                     )
                 })}
