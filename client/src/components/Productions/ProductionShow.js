@@ -20,6 +20,7 @@ const ProductionDetail = styled.div`
     background-color: white;
     color: black;
     box-shadow: 5px 5px #A22929;
+    margin-left: 20px;
 `
 
 class ProductionShow extends Component {
