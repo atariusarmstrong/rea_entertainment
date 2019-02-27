@@ -6,6 +6,7 @@ import ProductionIndex from './components/Productions/ProductionIndex';
 import ProductionShow from './components/Productions/ProductionShow';
 import Axios from 'axios';
 import EducationProgramIndex from './components/Education/EducationProgramIndex';
+import EducationShow from './components/Education/EducationShow';
 
 
 class App extends Component {
@@ -86,9 +87,12 @@ class App extends Component {
             <Route exact path='/season/:productionId' 
               component={ProductionShow}
             />
-            <Route exact pathe='/educationalprograms' 
+            <Route exact path='/educationalprograms' 
               render={(props) => <EducationProgramIndex {...props}
               educationalprograms={this.state.educationalprograms}/>}
+            />
+            <Route exact path='/educationalprograms/:educationalId'
+              component={EducationShow}
             />
           </Switch>
         </Router>
