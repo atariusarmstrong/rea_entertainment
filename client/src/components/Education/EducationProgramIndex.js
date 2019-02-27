@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import Navbar from '../Navbar';
 
 class EducationProgramIndex extends Component {
     state = {
@@ -13,10 +14,13 @@ class EducationProgramIndex extends Component {
     render() {
         return (
             <div>
+                <Navbar/>
                 {this.state.educationalprograms.map((program, i) => {
                     return (
                         <div key={i}>
-                            <h2>{program.title}</h2>
+                            <h2>{program.title}</h2><h4>with {program.instructor}</h4>
+                            <p>{program.description}</p>
+                            <p>Price: ${program.price}</p>
                         </div>
                     )
                 })}
