@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import GoogleLogin from 'react-google-login';
 import GoogleLogout from 'react-google-login';
 import { Link } from 'react-router-dom'
+import GoogleCal from '../GoogleCal';
 
 const ShowBox = styled.div`
     height: 395px;
@@ -68,6 +69,8 @@ class Index extends Component {
                         )
                     })}
                 </ShowContainer>
+
+            <GoogleCal />
                 
             <GoogleLogin
                 clientId="869869357020-4uu2fggcu62cva0o20vvl5q2701tmlej.apps.googleusercontent.com"
