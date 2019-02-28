@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import Navbar from '../Navbar';
 import styled from 'styled-components'
+import GoogleCal from '../../GoogleCal';
 
 const Header = styled.div`
     width: 640px;
@@ -22,9 +23,20 @@ const ProductionDetail = styled.div`
     box-shadow: 5px 5px #A22929;
 `
 
+const Calendar = styled.div`
+    position:fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+`
+
 class ProductionShow extends Component {
     state = {
-        production: {}
+        production: {},
+        visible: false
     }
 
     componentDidMount = () => {
@@ -35,6 +47,10 @@ class ProductionShow extends Component {
         const productionId = this.props.match.params.productionId
         Axios.get(`http://localhost:8000/api/v1/productions/${productionId}`)
         .then((res) => this.setState({production: res.data}))
+    }
+
+    toggleCalendar = () => {
+        this.setState({visible: !this.state.visible})
     }
     render() {
         return (
@@ -47,7 +63,14 @@ class ProductionShow extends Component {
                     <p>Director: {this.state.production.director}</p>
                     <p>{this.state.production.start_date} - {this.state.production.end_date}</p>
                     <p>{this.state.production.description}</p>
+
+                    <p>Pick a date</p>
+                    <button onClick={this.toggleCalendar}>Click Me</button>
+                    
                 </ProductionDetail>
+                <Calendar>
+                    {this.state.visible ? <GoogleCal toggleCalendar={this.toggleCalendar}/> : null}
+                </Calendar>
                 
             </div>
         );

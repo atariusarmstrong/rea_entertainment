@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Calendar from 'react_google_calendar'
 
+const API_KEY = process.env.REACT_APP_CALENDAR_API_KEY
+const CLIENT_ID = process.env.REACT_APP_CALENDAR_ID
+
 const calendar_configuration = {
-    api_key: 'AIzaSyBBHh4ulrHRlz2j1fyNQGy89-pbkY-j_gw',
+    api_key: API_KEY,
     calendars: [
       {
         name: 'REA Entertainment', // whatever you want to name it
-        url: 'm4tta15mskbcm1emjkps9mv2m0@group.calendar.google.com' // your calendar URL
+        url: CLIENT_ID // your calendar URL
       }
     ],
     dailyRecurrence: 700,
@@ -21,6 +24,7 @@ class GoogleCal extends Component {
 
     render() {
         return (
+            
             <div>
                 <Calendar
                     events={this.state.events}

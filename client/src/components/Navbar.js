@@ -29,6 +29,7 @@ class Navbar extends Component {
         return (
             <NavBar>
                 <Header>
+                    <Link to='/'><li>Home</li></Link>
                     <Link to="/season"><li>Productions</li></Link>
                     <Link to="/educationalprograms"><li>Education</li></Link>
                     <li>About Us</li>

@@ -4,19 +4,47 @@ import Navbar from '../Navbar';
 import axios from 'axios'
 import styled from 'styled-components'
 
+const Header = styled.div`
+    width: 640px;
+    height: 68px;
+    color: white;
+    background-color: #A22929;
+    text-transform: uppercase;
+    h1 {
+        margin-left: 20px;
+    }
+`
 const ShowBox = styled.div`
     box-shadow: 5px 5px #A22929;
     background-color: #707070;
     width: 447.9px;
     height: 455.8px;
-    img {
-        width: 447.9px;
-        height: 224.93px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-self: center;
+    overflow: auto;
+    p{
+        padding: 0px 15px;
     }
     a {
         text-decoration: none;
         color: white;
     }
+`
+
+const ShowHead = styled.div`
+    h3 {
+        color: white;
+        text-transform: uppercase;
+        background-color: #A2292980;
+        position: relative;
+        bottom: 44px;
+    }
+    img {
+        width: 447.9px;
+        height: 224.93px;
+    }
+    height: 224.93px;
 `
 const ShowContainer = styled.div`
     display: grid;
@@ -35,15 +63,18 @@ class ProductionIndex extends Component {
         return (
             <div>
                 <Navbar />
+                <Header>
+                    <h1>Upcoming Productions</h1>
+                </Header>
                 <ShowContainer>
                     {this.state.productionList.map((production, i) => {
                         return (
                             <ShowBox key={i}>
                                 <Link to={`/season/${production.id}`}>
-                                    <div>
+                                    <ShowHead>
                                         <img src={production.photo_url} alt={production.title}/>
                                         <h3>{production.title}</h3>
-                                    </div>
+                                    </ShowHead>
                                     <div>
                                         <p>{production.description}</p>
                                     </div>
