@@ -9,12 +9,17 @@ const EducationBox = styled.div`
     background-color: white;
     height: 163px;
     width: 859px;
-    margin: 0 auto;
+    margin: 10px auto;
+    padding: 20px;
     a {
         text-decoration: none;
+        color: #707070;
+        font-family: 'Thasadith', sans-serif;
     }
     h2 {
         text-transform: uppercase;
+        font-family: 'Fjalla One', sans-serif;
+        color: #A22929;
     }
 `
 
@@ -26,7 +31,11 @@ const Header = styled.div`
     text-transform: uppercase;
     h1 {
         margin-left: 20px;
+        padding-top: 15px;
     }
+    margin-bottom: 20px;
+    font-family: 'Fjalla One', sans-serif;
+
 `
 class EducationProgramIndex extends Component {
     state = {

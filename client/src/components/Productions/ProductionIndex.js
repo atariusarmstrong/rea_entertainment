@@ -12,7 +12,10 @@ const Header = styled.div`
     text-transform: uppercase;
     h1 {
         margin-left: 20px;
+        padding-top: 15px;
     }
+    margin-bottom: 20px;
+    font-family: 'Fjalla One', sans-serif;
 `
 const ShowBox = styled.div`
     box-shadow: 5px 5px #A22929;
@@ -25,6 +28,7 @@ const ShowBox = styled.div`
     overflow: auto;
     p{
         padding: 0px 15px;
+        font-family: 'Thasadith', sans-serif;
     }
     a {
         text-decoration: none;
@@ -39,6 +43,8 @@ const ShowHead = styled.div`
         background-color: #A2292980;
         position: relative;
         bottom: 44px;
+        font-family: 'Fjalla One', sans-serif;
+        padding-left: 10px;
     }
     img {
         width: 447.9px;
@@ -76,6 +82,7 @@ class ProductionIndex extends Component {
                                         <h3>{production.title}</h3>
                                     </ShowHead>
                                     <div>
+                                        <p>{production.start_date} to {production.end_date}</p>
                                         <p>{production.description}</p>
                                     </div>
                                 </Link>

@@ -17,6 +17,7 @@ const ShowBox = styled.div`
     p{
         padding: 0px 10px;
     }
+    font-family: 'Thasadith', sans-serif;
 `
 const ShowHead = styled.div`
     h3 {
@@ -25,6 +26,7 @@ const ShowHead = styled.div`
         background-color: #A2292980;
         position: absolute;
         bottom: 180px;
+        font-family: 'Fjalla One', sans-serif;
     }
     img {
         height: 198px;
@@ -34,9 +36,11 @@ const ShowHead = styled.div`
 const ShowContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    margin: 0 auto;
+    width: 100vw;
+    margin: 40px;
     a {
         text-decoration: none;
+        color: black;
     }
 `
 
@@ -55,6 +59,7 @@ const Header = styled.div`
         padding-top: 15px;
     }
     margin-bottom: 20px;
+    font-family: 'Fjalla One', sans-serif;
 `
 
 class Index extends Component {

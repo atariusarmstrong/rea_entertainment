@@ -29,6 +29,7 @@ const NavBar = styled.div`
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
     animation: expand 2s forwards;
+    font-family: 'Fjalla One', sans-serif;
 `
 
 class Navbar extends Component {
