@@ -44,6 +44,18 @@ const Logo = styled.img`
     display: block;
     margin: 0 auto;
 `
+const Header = styled.div`
+    width: 640px;
+    height: 68px;
+    color: white;
+    background-color: #A22929;
+    text-transform: uppercase;
+    h1 {
+        margin-left: 20px;
+        padding-top: 15px;
+    }
+    margin-bottom: 20px;
+`
 
 class Index extends Component {
 
@@ -54,7 +66,7 @@ class Index extends Component {
                 <Navbar />
                 <Logo src='rea_logo.png' alt="REA Entertainment"/>
 
-                <h2>Season</h2>
+                <Header><h1>Season</h1></Header>
 
                 <ShowContainer>
                     {this.props.productionList.map((production) => {
