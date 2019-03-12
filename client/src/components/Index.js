@@ -33,7 +33,7 @@ const ShowHead = styled.div`
 `
 const ShowContainer = styled.div`
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     margin: 0 auto;
     a {
         text-decoration: none;
