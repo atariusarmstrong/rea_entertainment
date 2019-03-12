@@ -18,9 +18,9 @@ const Header = styled.ul`
 const NavBar = styled.div`
     background-color: #A22929;
     width: 100vw;
-    height: 200px;
-    -webkit-clip-path: polygon(100% 34%, 100% 0%, 0% 0%, 0% 42%, 100% 23%);
-    clip-path: polygon(100% 34%, 100% 0%, 0% 0%, 0% 42%, 100% 23%);
+    height: 70px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
     animation: expand 2s forwards;
 `
 
