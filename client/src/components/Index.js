@@ -40,6 +40,11 @@ const ShowContainer = styled.div`
     }
 `
 
+const Logo = styled.img`
+    display: block;
+    margin: 0 auto;
+`
+
 class Index extends Component {
 
 
@@ -47,7 +52,7 @@ class Index extends Component {
         return (
             <div>
                 <Navbar />
-                Welcome to REA Ent
+                <Logo src='rea_logo.png' alt="REA Entertainment"/>
 
                 <h2>Season</h2>
 
