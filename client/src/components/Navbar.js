@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
+const Logo = styled.img`
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -50px;
+`
+
 const Header = styled.ul`
     list-style-type: none;
     float: right;
@@ -28,8 +35,8 @@ class Navbar extends Component {
     render() {
         return (
             <NavBar>
+                <Link to='/'><Logo src='rea_logo.png' atl='REA Entertainment'/></Link>
                 <Header>
-                    <Link to='/'><li>Home</li></Link>
                     <Link to="/season"><li>Productions</li></Link>
                     <Link to="/educationalprograms"><li>Education</li></Link>
                     <li>About Us</li>
